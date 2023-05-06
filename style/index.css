@@ -1,0 +1,149 @@
+/*Isto mantem o fundo da pagina em transparente*/
+@font-face {
+    font-family: SFPro;
+    src: url(./SFPRODISPLAYREGULAR.OTF);
+  }
+
+/*Aqui colocamos tudo em linha*/
+.box{
+    display: contents;
+    justify-content: space-between;
+}
+
+/*E dado um tamano ao texto*/
+.name{
+    font-size: 90px;
+    color: #0089e4;
+}
+
+/*E dado um tamanho a barra*/
+.bar{
+    height: 260px;
+}
+
+/*E dado 2% de espaco entre o texto e o logo e dado um tamanho*/
+.logo{
+    margin-left: 2%;
+    position: relative;
+    width: 260px;
+}
+
+/*.container{
+    animation-iteration-count: infinite;
+}*/
+
+/*colocamos tudo ao centro da pagina*/
+.box {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+/* aqui chamamos as animacoes juntamente com a sua posicao*/
+  /*A animacao tem 2 tempos um de entrada que e o primeiro e o de saida q e o segundo*/
+.bar {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: bar-in 1s forwards , bar-out 1s 21s forwards;
+  }
+
+  /* aqui chamamos as animacoes e a sua duracao juntamente com a sua posicao*/
+    /*A animacao tem 2 tempos um de entrada que e o primeiro e o de saida q e o segundo*/
+  .name {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: name-in 1s 1s forwards , name-out 1s 20s forwards;
+  }
+
+  /* aqui chamamos as animacoes e a sua duracao juntamente com a sua posicao*/
+  /*A animacao tem 2 tempos um de entrada que e o primeiro e o de saida q e o segundo*/
+  .logo{
+    opacity: 0;
+    transform: translateX(50px);
+    animation: logo-in 2.5s 2s forwards , rotateLogo 15s 5s, logo-out 1s 20s forwards ;
+  }
+
+  /*Animacao de entrada da barra*/
+@keyframes bar-in {
+    0% {
+      left: -100px;
+    }
+    100% {
+      left: 28%;
+    }
+  }
+
+  /*Animacao de saida da barra*/
+  @keyframes bar-out {
+    0% {
+      left: 28%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /*Animacao de entrada do texto*/
+  @keyframes name-in {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /*Animacao de saida do texto*/
+  @keyframes name-out {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+  
+  /*Animacao de saida do logo*/
+  @keyframes logo-in {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /*Animacao de saida do logo*/
+  @keyframes logo-out {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+
+  /*Animacao deretacao do logo*/
+  @keyframes rotateLogo {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(720deg);
+    }
+  }
+  
+
+
+
+
