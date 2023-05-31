@@ -4,10 +4,15 @@
     src: url(./SFPRODISPLAYREGULAR.OTF);
   }
 
+  .container{
+    filter: blur(5);
+  }
+
 /*Aqui colocamos tudo em linha*/
 .box{
     display: contents;
     justify-content: space-between;
+    
 }
 
 /*E dado um tamano ao texto*/
