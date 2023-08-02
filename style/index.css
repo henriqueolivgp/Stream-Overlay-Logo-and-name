@@ -18,19 +18,12 @@
 /*E dado um tamano ao texto*/
 .name{
     font-size: 90px;
-    color: #0089e4;
+    color: #898989;
 }
 
 /*E dado um tamanho a barra*/
 .bar{
     height: 260px;
-}
-
-/*E dado 2% de espaco entre o texto e o logo e dado um tamanho*/
-.logo{
-    margin-left: 2%;
-    position: relative;
-    width: 260px;
 }
 
 /*.container{
@@ -48,7 +41,7 @@
   /*A animacao tem 2 tempos um de entrada que e o primeiro e o de saida q e o segundo*/
 .bar {
     position: absolute;
-    left: -100px;
+    left: -90px;
     top: 50%;
     transform: translateY(-50%);
     animation: bar-in 1s forwards , bar-out 1s 21s forwards;
@@ -58,6 +51,7 @@
     /*A animacao tem 2 tempos um de entrada que e o primeiro e o de saida q e o segundo*/
   .name {
     opacity: 0;
+    margin-left: 50%;
     transform: translateX(-50px);
     animation: name-in 1s 1s forwards , name-out 1s 20s forwards;
   }

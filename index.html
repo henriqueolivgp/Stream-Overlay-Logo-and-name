@@ -20,13 +20,10 @@
     <main class="container">
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="box">
-                <a href="#"><img class="bar" src="./img/bar.png" alt="bar" /></a>
+                <a href="#"><img class="bar" src="./img/logo.png" alt="bar" /></a>
                 <h1 class="name">
                     <span class="write-text"></span>
-                    <br />
-                    <span class="write-text"></span>
                 </h1>
-                <img class="logo" src="./img/dios1.png" alt="logo" />
             </div>
         </div>
     </main>
@@ -51,16 +48,16 @@
         // ao criar novas variaveis igualamos ao elemento html que pretendemos usar
         const name = document.querySelector(".name");
         const span1 = name.querySelector(".write-text:first-child");
-        const span2 = name.querySelector(".write-text:last-child");
 
         //funcao de escrita para o primeiro span
         setTimeout(() => {
-            writeText(span1, "Streamer ");
+            writeText(span1, "HenriqueOliv_gp ");
         }, 2000);
-        //funcao de escrita para o segundo span
+
+        /*funcao de escrita para o segundo span
         setTimeout(() => {
             writeText(span2, "Oficial");
-        }, 4000);
+        }, 4000);*/
 
         //funcao para dar refrezh a pagina
         setInterval(function () {
