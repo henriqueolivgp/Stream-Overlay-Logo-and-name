@@ -1,71 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--import do estilo css da pagina-->
-    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/index.css" />
     <!-- inport da font do texto-->
-    <link href="https://www.dafontfree.net/embed/aW1wYWN0LXJlZ3VsYXImZGF0YS8yNS9pLzEyOTYxMi9pbXBhY3QudHRm"
-        rel="stylesheet" type="text/css" />
+    <link
+      href="https://www.dafontfree.net/embed/aW1wYWN0LXJlZ3VsYXImZGF0YS8yNS9pLzEyOTYxMi9pbXBhY3QudHRm"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!--import do bootstrap css-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main class="container">
-        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-            <div class="box">
-                <a href="#"><img class="bar" src="./img/logo.png" alt="bar" /></a>
-                <!--<h1 class="name">
-                    <span class="write-text"></span>
-                </h1>-->
-            </div>
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="height: 100vh"
+      >
+        <div class="box ">
+          <a href="#"><img class="logo" src="./img/logo.png" alt="logo" /></a>
+          <span class="name"></span>
         </div>
+      </div>
     </main>
     <!--import do bootstrap js-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
 
     <!--cript responsavel pela animacao de escrita das palavras e do reload a pagina-->
     <script>
-        // Funcao de escrita de letra a letra
-        const writeText = (target, text, i = 0) => {
-            if (i < text.length) {
-                target.innerHTML += text.charAt(i);
-                setTimeout(() => {
-                    writeText(target, text, i + 1);
-                }, 100);
-            }
-        };
+      // Funcao de escrita de letra a letra
+      const writeText = (target, text, i = 0) => {
+        if (i < text.length) {
+          target.innerHTML += text.charAt(i);
+          setTimeout(() => {
+            writeText(target, text, i + 1);
+          }, 100);
+        }
+      };
 
-        // declaracao de novas variaveis para serem usadas nas funcoes de escrita
-        // ao criar novas variaveis igualamos ao elemento html que pretendemos usar
+      // declaracao de novas variaveis para serem usadas nas funcoes de escrita
+      // ao criar novas variaveis igualamos ao elemento html que pretendemos usar
+      const name = document.querySelector(".name");
+
+      //funcao de escrita para o primeiro span
+      setTimeout(() => {
+        writeText(name, "HenriqueOliv_gp ");
+      }, 2000);
+
+      // Funcao para iniciar a animacao de movimento do texto "name" para sair da tela
+      const animateNameMoveOut = () => {
         const name = document.querySelector(".name");
-        const span1 = name.querySelector(".write-text:first-child");
+        name.style.animation = "name-out 5s forwards";
+      };
 
-        //funcao de escrita para o primeiro span
-        /*
-        setTimeout(() => {
-            writeText(span1, "HenriqueOliv_gp ");
-        }, 2000);
-        */
+      // Chama a animacao de movimento do texto "name" para sair da tela
+      setTimeout(animateNameMoveOut, 4000); // Chamada após um atraso de 4 segundos
 
-        /*funcao de escrita para o segundo span
-        setTimeout(() => {
-            writeText(span2, "Oficial");
-        }, 4000);*/
+      document.addEventListener("DOMContentLoaded", function() {
+  var logo = document.getElementById("logo");
 
-        //funcao para dar refrezh a pagina
-        setInterval(function () {
-            location.reload();
-        }, 4000);
+  // Move the logo to the center
+  setTimeout(function() {
+    logo.style.right = "calc(50% - 50px)"; // Assuming the logo is 100px wide
+  }, 1000); // 1000 milliseconds = 1 second
+
+  // Move the logo to the right after waiting for a few seconds
+  setTimeout(function() {
+    logo.style.right = "calc(100% + 100px)"; // Assuming the logo is 100px wide
+  }, 3000); // Wait for 3 seconds before moving to the right
+});
+
+      // Funcao para animar a saida do logo
+    //   const animateLogoOut = () => {
+    //     const logo = document.querySelector(".logo");
+    //     logo.style.animation = "logo-out 1s forwards";
+    //   };
+
+     // funcao para dar refrezh a pagina
+      setInterval(function () {
+          location.reload();
+      }, 6000);
     </script>
-</body>
-
+  </body>
 </html>
